@@ -2,7 +2,7 @@ import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-export default async function Categories() {
+export default async function DashboardCourses() {
   const data = [
     {
       song: 'The Sliding Mr. Bones (Next Stop, Pottersville)',
@@ -12,14 +12,13 @@ export default async function Categories() {
     { song: 'Witchy Woman', artist: 'The Eagles', year: '1972' },
     { song: 'Shining Star', artist: 'Earth, Wind, and Fire', year: '1975' },
   ]
-  
   return (
     <div className=' w-full p-6  rounded-lg space-y-6'>
       <div className='flex justify-between items-center'>
-        <h2 className='text-2xl font-semibold text-gray-800 '>التصنيفات</h2>
-        <Link to={'/dashboard/categories/add-category'}>
+        <h2 className='text-2xl font-semibold text-gray-800 '>الدورات</h2>
+        <Link to={'/dashboard/categories/add-courses'}>
           <button className='bg-orange-500 py-3 px-5 text-white rounded-xl'>
-            اضافه تصنيف
+            اضافه دوره
           </button>
         </Link>
       </div>
@@ -38,7 +37,7 @@ export default async function Categories() {
               key={index}
               className='border-b border-gray-300 hover:bg-gray-100 transition'
             >
-              <td className='p-3'>{item.song}</td>
+              <td className='p-3'>{item.name}</td>
               <td className='p-3'>{item.artist}</td>
               <td className='p-3'>{item.year}</td>
               <td className='p-3 flex gap-x-4 justify-center'>
@@ -56,4 +55,3 @@ export default async function Categories() {
     </div>
   )
 }
-
