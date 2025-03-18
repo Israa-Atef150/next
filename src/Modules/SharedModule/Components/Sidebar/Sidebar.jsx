@@ -7,7 +7,7 @@ const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className={` top-0 right-0 h-screen bg-gray-900 text-white transition-all shadow-lg border-l-4 border-orange-500 ${collapsed ? "w-20" : "w-64"}`}>
+    <div className={` top-0 right-0 h-screen min-h-full bg-gray-900 text-white transition-all shadow-lg border-l-4 border-orange-500 ${collapsed ? "w-20" : "w-64"}`}>
       {/* اللوجو + زر الفتح والإغلاق */}
       <div className="flex items-center p-4 border-b border-gray-700 justify-between">
         {!collapsed && <img src={Logo} alt="شعار" className="h-10 w-10 rounded-full" />}

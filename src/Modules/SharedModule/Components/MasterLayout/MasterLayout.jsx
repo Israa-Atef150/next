@@ -4,7 +4,7 @@ import SideBar from '../Sidebar/Sidebar'
 
 export default function MasterLayout() {
   return (
-    <div className='flex'>
+    <div className='flex h-full'>
       <SideBar />
       <div className='p-4 w-full'>
         <Outlet />

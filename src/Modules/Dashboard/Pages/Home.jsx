@@ -21,7 +21,7 @@ export default function Home() {
 
   const barData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-    datasets: [{ label: "Sales", data: [1000, 1200, 1800, 2200, 1500, 900, 1700, 2600], backgroundColor: "#6366F1" }],
+    datasets: [{ label: "Sales", data: [1000, 1200, 1800, 2200, 1500, 900, 1700, 2600], backgroundColor: "#f97316" }],
   };
 
   const doughnutData = {

@@ -24,108 +24,110 @@ import AddEmployees from './Modules/Dashboard/Pages/AddEmployees'
 import Exams from './Modules/Dashboard/Pages/Exams'
 import AddExams from './Modules/Dashboard/Pages/AddExams'
 import ChangePassword from './Modules/Dashboard/Pages/ChangePassword'
-
+import { Toaster } from 'sonner'
 
 export default function App() {
-  const routes=createBrowserRouter([
+  const routes = createBrowserRouter([
     {
-    path:"/",
-    element:<AuthLayout/>,
-    errorElement:<NotFound/>,
-    children:[{
-      path:"",
-      element:<Guide/>
-    },
-    {
-      path:"login",
-      element:<Login/>
-    },
-    {
-      path:"AdmissionRequirements",
-      element:<AdmissionRequirements/>
-    },
-    {
-      path:"AboutUs",
-      element:<AboutUs/>
-    },
-    {
-      path:"CallUS",
-      element:<CallUs/>
-    },
-    {
-      path:"Edusystem",
-      element:<Edusystem/>
-    },
+      path: '/',
+      element: <AuthLayout />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          path: '',
+          element: <Guide />,
+        },
+        {
+          path: 'login',
+          element: <Login />,
+        },
+        {
+          path: 'AdmissionRequirements',
+          element: <AdmissionRequirements />,
+        },
+        {
+          path: 'AboutUs',
+          element: <AboutUs />,
+        },
+        {
+          path: 'CallUS',
+          element: <CallUs />,
+        },
+        {
+          path: 'Edusystem',
+          element: <Edusystem />,
+        },
 
-    {
-      path:"forgetpass",
-      element:<Forgetpass/>
-    },
-  ]
+        {
+          path: 'forgetpass',
+          element: <Forgetpass />,
+        },
+      ],
     },
 
     // إذا كنت بحاجة إلى MasterLayout، تأكد من استيراده
     {
-      path: "/dashboard",
-      element: <MasterLayout/>,
+      path: '/dashboard',
+      element: <MasterLayout />,
       errorElement: <NotFound />,
       children: [
         {
-          path:"/dashboard",
-          element:<Home/>
+          path: '/dashboard',
+          element: <Home />,
         },
         {
-          path:"/dashboard/courses",
-          element:<DashboardCourses/>
+          path: '/dashboard/courses',
+          element: <DashboardCourses />,
         },
         {
-          path:"/dashboard/Courses/add-Courses",
-          element:<AddCourses/>
-          
+          path: '/dashboard/courses/add-courses',
+          element: <AddCourses />,
         },
         {
-          path:"/dashboard/students",
-          element:<Students/>
+          path: '/dashboard/students',
+          element: <Students />,
         },
         {
-          path:"/dashboard/Students/AddStudents",
-          element:<AddStudents/>
+          path: '/dashboard/Students/AddStudents',
+          element: <AddStudents />,
         },
         {
-          path:"/dashboard/Docters",
-          element:<Docters/>
+          path: '/dashboard/Docters',
+          element: <Docters />,
         },
         {
-          path:"/dashboard/Docters/AddDocters",
-          element:<AddDocters/>
+          path: '/dashboard/Docters/AddDocters',
+          element: <AddDocters />,
         },
         {
-          path:"/dashboard/employees",
-          element:<Employees/>
+          path: '/dashboard/employees',
+          element: <Employees />,
         },
         {
-          path:"/dashboard/Exams",
-          element:<Exams/>
+          path: '/dashboard/Exams',
+          element: <Exams />,
         },
         {
-          path:"/dashboard/Exams/AddExams",
-          element:<AddExams/>
+          path: '/dashboard/Exams/AddExams',
+          element: <AddExams />,
         },
         {
-          path:"/dashboard/Docters/AddDocters",
-          element:<AddEmployees/>
+          path: '/dashboard/Docters/AddDocters',
+          element: <AddEmployees />,
         },
         {
-          path:"/dashboard/ChangePassword",
-          element:<ChangePassword/>
+          path: '/dashboard/ChangePassword',
+          element: <ChangePassword />,
         },
         {
-          path:"/dashboard/users/add-users",
-          element:<AddUsers/>
+          path: '/dashboard/users/add-users',
+          element: <AddUsers />,
         },
       ],
     },
-  ]);
+  ])
 
-  return <RouterProvider router={routes} />;
+  return (
+      <RouterProvider router={routes}/>
+  )
 }

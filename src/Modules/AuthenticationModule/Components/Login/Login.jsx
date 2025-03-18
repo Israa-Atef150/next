@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner"
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [userType, setUserType] = useState("student"); // افتراضيًا الطالب
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
 
     const apiUrl =
       userType === "student"
@@ -27,8 +26,7 @@ export default function Login() {
         password,
       });
 
-      console.log("تم تسجيل الدخول بنجاح:", response.data);
-      alert("تم تسجيل الدخول بنجاح!");
+      toast.success("تم تسجيل الدخول بنجاح!");
       localStorage.setItem("token", response.data.token);
 
       // التوجيه بناءً على نوع المستخدم
@@ -39,7 +37,7 @@ export default function Login() {
       }
     } catch (err) {
       console.error("خطأ أثناء تسجيل الدخول:", err);
-      setError(err.response?.data?.message || "حدث خطأ أثناء تسجيل الدخول");
+      toast.error(err.response?.data?.message || "حدث خطأ أثناء تسجيل الدخول");
     } finally {
       setLoading(false);
     }
@@ -54,7 +52,6 @@ export default function Login() {
               تسجيل الدخول إلى حسابك
             </h1>
 
-            {error && <p className="text-red-500 text-sm">{error}</p>}
 
             <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
               <div>
@@ -103,17 +100,17 @@ export default function Login() {
               </button>
 
               {/* اختيار نوع المستخدم */}
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center gap-x-4">
                 <button
                   type="button"
-                  className={`px-4 py-2 rounded-lg ${userType === "student" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+                  className={`px-4 py-2 rounded-lg  ${userType === "student" ? "bg-orange-600 text-white" : "bg-gray-300"}`}
                   onClick={() => setUserType("student")}
                 >
                   طالب
                 </button>
                 <button
                   type="button"
-                  className={`px-4 py-2 rounded-lg ${userType === "admin" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+                  className={`px-4 py-2 rounded-lg ${userType === "admin" ? "bg-orange-600 text-white" : "bg-gray-300"}`}
                   onClick={() => setUserType("admin")}
                 >
                   أدمن

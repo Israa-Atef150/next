@@ -1,8 +1,7 @@
-import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-export default async function DashboardCourses() {
+export default  function DashboardCourses() {
   const data = [
     {
       song: 'The Sliding Mr. Bones (Next Stop, Pottersville)',
@@ -16,11 +15,11 @@ export default async function DashboardCourses() {
     <div className=' w-full p-6  rounded-lg space-y-6'>
       <div className='flex justify-between items-center'>
         <h2 className='text-2xl font-semibold text-gray-800 '>الدورات</h2>
-                <Link to={'/dashboard/Courses/add-Courses'}>
-                  <button className='bg-orange-500 py-3 px-5 text-white rounded-xl'>
-                    اضافه دوره
-                  </button>
-                </Link>
+        <Link to={'/dashboard/courses/add-courses'}>
+          <button className='bg-orange-500 py-3 px-5 text-white rounded-xl'>
+            اضافه دوره
+          </button>
+        </Link>
       </div>
       <table className='w-full border-collapse rounded-lg '>
         <thead>
