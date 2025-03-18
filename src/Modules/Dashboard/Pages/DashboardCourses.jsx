@@ -16,11 +16,11 @@ export default async function DashboardCourses() {
     <div className=' w-full p-6  rounded-lg space-y-6'>
       <div className='flex justify-between items-center'>
         <h2 className='text-2xl font-semibold text-gray-800 '>الدورات</h2>
-        <Link to={'/dashboard/categories/add-courses'}>
-          <button className='bg-orange-500 py-3 px-5 text-white rounded-xl'>
-            اضافه دوره
-          </button>
-        </Link>
+                <Link to={'/dashboard/Courses/add-Courses'}>
+                  <button className='bg-orange-500 py-3 px-5 text-white rounded-xl'>
+                    اضافه دوره
+                  </button>
+                </Link>
       </div>
       <table className='w-full border-collapse rounded-lg '>
         <thead>
@@ -37,7 +37,7 @@ export default async function DashboardCourses() {
               key={index}
               className='border-b border-gray-300 hover:bg-gray-100 transition'
             >
-              <td className='p-3'>{item.name}</td>
+              <td className='p-3'>{item.song}</td>
               <td className='p-3'>{item.artist}</td>
               <td className='p-3'>{item.year}</td>
               <td className='p-3 flex gap-x-4 justify-center'>

@@ -1,7 +1,7 @@
 .hero-container {
   width: 100%;
   position: relative;
-  height: 650px;
+  height: 660px;
 }
 
 .hero-swiper {
@@ -91,4 +91,7 @@
 
 .swiper-button-prev:after , .swiper-button-next:after{
   font-size: 21px;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet{
+  height: 15px;
 }
